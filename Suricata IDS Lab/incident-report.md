@@ -11,28 +11,6 @@
 
 ---
 
-## Screenshots needed
-
-Capture each of these and drop the file at the indicated path (all under
-`evidence/screenshots/`). Each matching placeholder appears inline later in the
-report.
-
-- [x] `evidence/screenshots/00-lab-topology.png` _(generated diagram)_ — Lab overview: VMware Workstation showing the Kali VM (`192.168.64.128`) and Ubuntu sensor VM (`suricata-lab`, `192.168.64.131`) on the NAT network. A simple hand-drawn/Visio topology diagram is also fine.
-- [x] `evidence/screenshots/00b-suricata-ruleset-stats.png` _(source: Screenshot 2026-10-23 145832.png (suricata -T: 53257 loaded, 0 failed) + 145407 (suricata-update 8.0.3, 53249 enabled))_ — Ubuntu: `sudo suricatasc -c ruleset-stats` output showing ~53257 rules loaded, 0 failed (sensor healthy).
-- [x] `evidence/screenshots/00c-suricata-yaml-homenet.png` _(source: Screenshot 2026-10-23 150229.png)_ — Ubuntu: `suricata.yaml` snippet showing `HOME_NET: "[192.168.64.131/32]"`, `EXTERNAL_NET: "!$HOME_NET"`, and the `af-packet` block on `ens33` (cluster_flow, tpacket-v3).
-- [x] `evidence/screenshots/00d-sensor-live-dhcp.png` _(source: Screenshot 2026-10-23 151243.png)_ — Ubuntu: `fast.log`/`eve.json` showing the **ET INFO Kali hostname in DHCP Request** alert — proof the sensor was live on `ens33` (used in place of the skipped testmynids baseline).
-- [x] `evidence/screenshots/01-ssh-eve-alerts.png` _(source: Screenshot 2026-10-23 152059.png)_ — Ubuntu: jq summary of Scenario 1 `eve.json` alerts (dest_port 22) showing SIDs **1000002**, **2001219**, **2006546** firing from `192.168.64.128`.
-- [x] `evidence/screenshots/01b-ssh-authlog-accepted.png` _(source: Screenshot 2026-10-23 152747.png + 153050 (Failed:27 Accepted:5))_ — Ubuntu: `/var/log/auth.log` showing many `Failed password` / `Invalid user` lines ending in `Accepted password for ubuntu from 192.168.64.128`.
-- [x] `evidence/screenshots/01c-hydra-run.png` _(source: Screenshot 2026-10-23 152416.png (success ubuntu:ubuntu) + 151916 (failed -t4))_ — Kali: the successful `hydra ... -t 1 -W 2 -f ssh://192.168.64.131` run showing the cracked `ubuntu` credential.
-- [x] `evidence/screenshots/01d-ssh-invalid-banner-noise.png` _(source: Screenshot 2026-10-23 152534.png)_ — Ubuntu: the burst of SID **2228000** `SURICATA SSH invalid banner` entries (observed noise from Hydra's reset handshakes).
-- [x] `evidence/screenshots/02-nmap-run.png` _(source: Screenshot 2026-10-23 153852.png)_ — Kali: the `nmap -sS -p 1-200` and `nmap --script http-headers` runs.
-- [x] `evidence/screenshots/02b-nmap-alerts.png` _(source: Screenshot 2026-10-23 153943.png + 153516)_ — Ubuntu: `fast.log`/`eve.json` showing **1000001** (SYN rate), **1000003** + ET **2009358** (Nmap UA).
-- [x] `evidence/screenshots/03-webscan-run.png` _(source: Screenshot 2026-10-23 154228.png)_ — Kali: the curl loop + Nikto 2.6.1 run (8107 requests).
-- [x] `evidence/screenshots/03b-webscan-alerts.png` _(source: Screenshot 2026-10-23 154325.png)_ — Ubuntu: SID hit counts — **1000005=1**, **1000006=4**, **1000007=284**, **1000008=271**, **2002825=1**, and **1000004=0 / 2002677=0** (UA miss).
-- [x] `evidence/screenshots/03c-http-user-agents.png` _(source: Screenshot 2026-10-23 154442.png)_ — Ubuntu: `jq` of unique `http.http_user_agent` values showing Nikto 2.6.1 spoofing a Chrome Windows UA (~8044 hits) and no literal "Nikto" string.
-
----
-
 ## 1. Metadata
 
 | Field | Value |

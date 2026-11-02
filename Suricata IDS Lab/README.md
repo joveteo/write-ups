@@ -1,6 +1,6 @@
 # Suricata IDS Lab — SSH Brute Force, Recon & Web Scanning
 
-> **Student:** Jove Teo · **Date:** 23 Oct 2026 · **Environment:** Kali attacker VM (`192.168.64.128`) → Ubuntu sensor/target VM (`suricata-lab`, `192.168.64.131`) on VMware Workstation NAT
+> **Environment:** Kali attacker VM (`192.168.64.128`) → Ubuntu sensor/target VM (`suricata-lab`, `192.168.64.131`) on VMware Workstation NAT
 >
 > Authorized academic / self-study lab only. Do not run Hydra, Nmap, or Nikto against systems you do not own or lack explicit permission to test.
 

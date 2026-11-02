@@ -1,0 +1,62 @@
+# =====================================================================
+# local.rules — Suricata home-lab detection rules (Jove Teo, Oct 2026)
+# Authorized lab only: Kali VM (EXTERNAL_NET) -> Ubuntu victim VM (HOME_NET)
+#
+# SID range 1000001-1000008 (local/private range; NOT ET Open).
+# Rule ideas came from a Perplexity research pass (22 Oct 2026); syntax
+# was validated with `suricata -T` and the rules were fired against a
+# synthetic loopback capture on Grok Bot's box (see docs/scenario-runbook.md
+# "Local rules" section). Re-validate on your own Suricata version.
+#
+# Assumes in suricata.yaml:
+#   HOME_NET: "[192.168.56.20/32]"   # victim VM only (edit to your IP)
+#   EXTERNAL_NET: "!$HOME_NET"
+#   default-rule-path + rule-files includes this file, e.g.
+#     rule-files:
+#       - suricata.rules
+#       - /etc/suricata/rules/local.rules
+#
+# Caveats (write these into the report):
+#  - Thresholds count PACKETS / REQUESTS / CONNECTIONS, not passwords.
+#  - HTTP rules only see plaintext HTTP (no TLS inspection).
+#  - User-Agent rules are trivially evaded by changing the UA.
+#  - Run negative controls (normal browsing / single ssh login) too.
+# =====================================================================
+
+# 1000001 — TCP SYN rate from one source (port scan, e.g. nmap -sS).
+# flags:S,12 = SYN only, ignoring the CWR/ECE bits. Fires once per 10s window
+# per source after 20 SYNs. Covers the gap left by ET's commented-out
+# "NMAP -sS window" SIDs (2000537, 2009582-2009584).
+alert tcp $EXTERNAL_NET any -> $HOME_NET any (msg:"LOCAL LAB TCP SYN rate threshold - possible port scan"; flow:stateless; flags:S,12; threshold:type both, track by_src, count 20, seconds 10; classtype:attempted-recon; sid:1000001; rev:1; metadata:created_at 2026_10_22, lab local;)
+
+# 1000002 — Burst of new SSH connections to port 22 (brute force / Hydra).
+# 5 SYNs in 60s by source. Tighter than ET 2001219 (5 in 120s). Counts
+# connection attempts, not failed passwords — correlate with
+# `journalctl -u ssh` ("Failed password") for proof of guessing.
+alert tcp $EXTERNAL_NET any -> $HOME_NET 22 (msg:"LOCAL LAB SSH connection burst - possible brute force"; flow:to_server; flags:S,12; threshold:type both, track by_src, count 5, seconds 60; classtype:attempted-admin; sid:1000002; rev:1; metadata:created_at 2026_10_22, lab local;)
+
+# 1000003 — HTTP User-Agent contains "Nmap" (NSE http-* scripts).
+alert http $EXTERNAL_NET any -> $HOME_NET any (msg:"LOCAL LAB HTTP User-Agent contains Nmap"; flow:established,to_server; http.user_agent; content:"Nmap"; nocase; classtype:attempted-recon; sid:1000003; rev:1; metadata:created_at 2026_10_22, lab local;)
+
+# 1000004 — HTTP User-Agent contains "Nikto".
+# No threshold (ET 2002677 needs 5 in 60s); limit to 1 alert/min/src to cut noise.
+alert http $EXTERNAL_NET any -> $HOME_NET any (msg:"LOCAL LAB HTTP User-Agent contains Nikto"; flow:established,to_server; http.user_agent; content:"Nikto"; nocase; threshold:type limit, track by_src, count 1, seconds 60; classtype:web-application-attack; sid:1000004; rev:1; metadata:created_at 2026_10_22, lab local;)
+
+# 1000005 — HTTP User-Agent starts with "curl/" (INFORMATIONAL).
+# ET 2013028 is outbound-only AND commented out (deprecated) in ET Open;
+# ET 2002825 needs 10 curl requests in 60s. This fires on the first one.
+alert http $EXTERNAL_NET any -> $HOME_NET any (msg:"LOCAL LAB INFO HTTP User-Agent curl (inbound)"; flow:established,to_server; http.user_agent; content:"curl/"; nocase; startswith; threshold:type limit, track by_src, count 1, seconds 60; classtype:misc-activity; priority:3; sid:1000005; rev:1; metadata:created_at 2026_10_22, lab local;)
+
+# 1000006 — HTTP GET burst: 20 GET requests in 10s from one source
+# (scanner / crawler / curl loop), independent of User-Agent.
+alert http $EXTERNAL_NET any -> $HOME_NET any (msg:"LOCAL LAB HTTP GET burst - possible web scan"; flow:established,to_server; http.method; content:"GET"; threshold:type both, track by_src, count 20, seconds 10; classtype:attempted-recon; sid:1000006; rev:1; metadata:created_at 2026_10_22, lab local;)
+
+# 1000007 — Directory traversal pattern in the RAW (un-normalised) URI.
+# Raw buffer is used because the normalised http.uri can have dot-segments
+# resolved/decoded, hiding the traversal. pcre-only (no content) = slower, fine for a lab.
+# Matches ../  ..\  and common %-encoded forms (%2e%2e%2f, ..%2f, %2e%2e/).
+alert http $EXTERNAL_NET any -> $HOME_NET any (msg:"LOCAL LAB HTTP directory traversal pattern in raw URI"; flow:established,to_server; http.uri.raw; pcre:"/(?:\.\.|%2e%2e)(?:\/|\\|%2f|%5c)/i"; classtype:web-application-attack; sid:1000007; rev:1; metadata:created_at 2026_10_22, lab local;)
+
+# 1000008 — <script tag in the URI (reflected XSS probe).
+# http.uri is percent-decoded, so %3Cscript%3E also matches.
+alert http $EXTERNAL_NET any -> $HOME_NET any (msg:"LOCAL LAB HTTP script tag in URI - possible XSS probe"; flow:established,to_server; http.uri; content:"<script"; nocase; classtype:web-application-attack; sid:1000008; rev:1; metadata:created_at 2026_10_22, lab local;)

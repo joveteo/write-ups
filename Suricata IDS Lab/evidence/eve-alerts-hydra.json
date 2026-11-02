@@ -1,0 +1,825 @@
+{
+  "timestamp": "2026-10-23T07:18:30.896027+0000",
+  "flow_id": 1878083839674251,
+  "in_iface": "ens33",
+  "event_type": "alert",
+  "src_ip": "192.168.64.128",
+  "src_port": 48468,
+  "dest_ip": "192.168.64.131",
+  "dest_port": 22,
+  "proto": "TCP",
+  "ip_v": 4,
+  "pkt_src": "wire/pcap",
+  "alert": {
+    "action": "allowed",
+    "gid": 1,
+    "signature_id": 1000002,
+    "rev": 1,
+    "signature": "LOCAL LAB SSH connection burst - possible brute force",
+    "category": "Attempted Administrator Privilege Gain",
+    "severity": 1,
+    "metadata": {
+      "created_at": [
+        "2026_10_22"
+      ],
+      "lab": [
+        "local"
+      ]
+    }
+  },
+  "direction": "to_server",
+  "flow": {
+    "pkts_toserver": 1,
+    "pkts_toclient": 0,
+    "bytes_toserver": 74,
+    "bytes_toclient": 0,
+    "start": "2026-10-23T07:18:30.896027+0000",
+    "src_ip": "192.168.64.128",
+    "dest_ip": "192.168.64.131",
+    "src_port": 48468,
+    "dest_port": 22
+  }
+}
+{
+  "timestamp": "2026-10-23T07:18:30.896027+0000",
+  "flow_id": 1878083839674251,
+  "in_iface": "ens33",
+  "event_type": "alert",
+  "src_ip": "192.168.64.128",
+  "src_port": 48468,
+  "dest_ip": "192.168.64.131",
+  "dest_port": 22,
+  "proto": "TCP",
+  "ip_v": 4,
+  "pkt_src": "wire/pcap",
+  "alert": {
+    "action": "allowed",
+    "gid": 1,
+    "signature_id": 2001219,
+    "rev": 20,
+    "signature": "ET SCAN Potential SSH Scan",
+    "category": "Attempted Information Leak",
+    "severity": 2,
+    "metadata": {
+      "confidence": [
+        "Medium"
+      ],
+      "created_at": [
+        "2010_07_30"
+      ],
+      "signature_severity": [
+        "Informational"
+      ],
+      "updated_at": [
+        "2019_07_26"
+      ]
+    }
+  },
+  "direction": "to_server",
+  "flow": {
+    "pkts_toserver": 1,
+    "pkts_toclient": 0,
+    "bytes_toserver": 74,
+    "bytes_toclient": 0,
+    "start": "2026-10-23T07:18:30.896027+0000",
+    "src_ip": "192.168.64.128",
+    "dest_ip": "192.168.64.131",
+    "src_port": 48468,
+    "dest_port": 22
+  }
+}
+{
+  "timestamp": "2026-10-23T07:18:30.932274+0000",
+  "flow_id": 1873021040006724,
+  "in_iface": "ens33",
+  "event_type": "alert",
+  "src_ip": "192.168.64.128",
+  "src_port": 48448,
+  "dest_ip": "192.168.64.131",
+  "dest_port": 22,
+  "proto": "TCP",
+  "ip_v": 4,
+  "pkt_src": "wire/pcap",
+  "alert": {
+    "action": "allowed",
+    "gid": 1,
+    "signature_id": 2006546,
+    "rev": 9,
+    "signature": "ET SCAN LibSSH Based Frequent SSH Connections Likely BruteForce Attack",
+    "category": "Attempted Administrator Privilege Gain",
+    "severity": 1,
+    "metadata": {
+      "confidence": [
+        "Medium"
+      ],
+      "created_at": [
+        "2010_07_30"
+      ],
+      "signature_severity": [
+        "Informational"
+      ],
+      "updated_at": [
+        "2019_07_26"
+      ]
+    }
+  },
+  "app_proto": "ssh",
+  "direction": "to_server",
+  "flow": {
+    "pkts_toserver": 4,
+    "pkts_toclient": 3,
+    "bytes_toserver": 295,
+    "bytes_toclient": 248,
+    "start": "2026-10-23T07:18:30.894848+0000",
+    "src_ip": "192.168.64.128",
+    "dest_ip": "192.168.64.131",
+    "src_port": 48448,
+    "dest_port": 22
+  }
+}
+{
+  "timestamp": "2026-10-23T07:18:39.389575+0000",
+  "flow_id": 2231572652773530,
+  "in_iface": "ens33",
+  "event_type": "alert",
+  "src_ip": "192.168.64.128",
+  "src_port": 37190,
+  "dest_ip": "192.168.64.131",
+  "dest_port": 22,
+  "proto": "TCP",
+  "ip_v": 4,
+  "pkt_src": "wire/pcap",
+  "metadata": {
+    "flowints": {
+      "applayer.anomaly.count": 1
+    }
+  },
+  "tx_id": 0,
+  "alert": {
+    "action": "allowed",
+    "gid": 1,
+    "signature_id": 2228000,
+    "rev": 1,
+    "signature": "SURICATA SSH invalid banner",
+    "category": "Generic Protocol Command Decode",
+    "severity": 3
+  },
+  "ts_progress": "request_banner_done",
+  "tc_progress": "response_in_progress",
+  "ssh": {
+    "client": {
+      "proto_version": "2.0",
+      "software_version": "libssh_0.12.2"
+    }
+  },
+  "app_proto": "ssh",
+  "direction": "to_server",
+  "flow": {
+    "pkts_toserver": 4,
+    "pkts_toclient": 4,
+    "bytes_toserver": 295,
+    "bytes_toclient": 298,
+    "start": "2026-10-23T07:18:39.388506+0000",
+    "src_ip": "192.168.64.128",
+    "dest_ip": "192.168.64.131",
+    "src_port": 37190,
+    "dest_port": 22
+  }
+}
+{
+  "timestamp": "2026-10-23T07:18:39.400638+0000",
+  "flow_id": 1994668964960644,
+  "in_iface": "ens33",
+  "event_type": "alert",
+  "src_ip": "192.168.64.128",
+  "src_port": 37206,
+  "dest_ip": "192.168.64.131",
+  "dest_port": 22,
+  "proto": "TCP",
+  "ip_v": 4,
+  "pkt_src": "wire/pcap",
+  "metadata": {
+    "flowints": {
+      "applayer.anomaly.count": 1
+    }
+  },
+  "tx_id": 0,
+  "alert": {
+    "action": "allowed",
+    "gid": 1,
+    "signature_id": 2228000,
+    "rev": 1,
+    "signature": "SURICATA SSH invalid banner",
+    "category": "Generic Protocol Command Decode",
+    "severity": 3
+  },
+  "ts_progress": "request_banner_done",
+  "tc_progress": "response_in_progress",
+  "ssh": {
+    "client": {
+      "proto_version": "2.0",
+      "software_version": "libssh_0.12.2"
+    }
+  },
+  "app_proto": "ssh",
+  "direction": "to_server",
+  "flow": {
+    "pkts_toserver": 4,
+    "pkts_toclient": 4,
+    "bytes_toserver": 295,
+    "bytes_toclient": 298,
+    "start": "2026-10-23T07:18:39.398884+0000",
+    "src_ip": "192.168.64.128",
+    "dest_ip": "192.168.64.131",
+    "src_port": 37206,
+    "dest_port": 22
+  }
+}
+{
+  "timestamp": "2026-10-23T07:18:39.406225+0000",
+  "flow_id": 2019780277038380,
+  "in_iface": "ens33",
+  "event_type": "alert",
+  "src_ip": "192.168.64.128",
+  "src_port": 37222,
+  "dest_ip": "192.168.64.131",
+  "dest_port": 22,
+  "proto": "TCP",
+  "ip_v": 4,
+  "pkt_src": "wire/pcap",
+  "metadata": {
+    "flowints": {
+      "applayer.anomaly.count": 1
+    }
+  },
+  "tx_id": 0,
+  "alert": {
+    "action": "allowed",
+    "gid": 1,
+    "signature_id": 2228000,
+    "rev": 1,
+    "signature": "SURICATA SSH invalid banner",
+    "category": "Generic Protocol Command Decode",
+    "severity": 3
+  },
+  "ts_progress": "request_banner_done",
+  "tc_progress": "response_in_progress",
+  "ssh": {
+    "client": {
+      "proto_version": "2.0",
+      "software_version": "libssh_0.12.2"
+    }
+  },
+  "app_proto": "ssh",
+  "direction": "to_server",
+  "flow": {
+    "pkts_toserver": 4,
+    "pkts_toclient": 4,
+    "bytes_toserver": 295,
+    "bytes_toclient": 298,
+    "start": "2026-10-23T07:18:39.404730+0000",
+    "src_ip": "192.168.64.128",
+    "dest_ip": "192.168.64.131",
+    "src_port": 37222,
+    "dest_port": 22
+  }
+}
+{
+  "timestamp": "2026-10-23T07:18:39.417226+0000",
+  "flow_id": 2069841402933996,
+  "in_iface": "ens33",
+  "event_type": "alert",
+  "src_ip": "192.168.64.128",
+  "src_port": 37236,
+  "dest_ip": "192.168.64.131",
+  "dest_port": 22,
+  "proto": "TCP",
+  "ip_v": 4,
+  "pkt_src": "wire/pcap",
+  "metadata": {
+    "flowints": {
+      "applayer.anomaly.count": 1
+    }
+  },
+  "tx_id": 0,
+  "alert": {
+    "action": "allowed",
+    "gid": 1,
+    "signature_id": 2228000,
+    "rev": 1,
+    "signature": "SURICATA SSH invalid banner",
+    "category": "Generic Protocol Command Decode",
+    "severity": 3
+  },
+  "ts_progress": "request_banner_done",
+  "tc_progress": "response_in_progress",
+  "ssh": {
+    "client": {
+      "proto_version": "2.0",
+      "software_version": "libssh_0.12.2"
+    }
+  },
+  "app_proto": "ssh",
+  "direction": "to_server",
+  "flow": {
+    "pkts_toserver": 4,
+    "pkts_toclient": 4,
+    "bytes_toserver": 295,
+    "bytes_toclient": 298,
+    "start": "2026-10-23T07:18:39.416386+0000",
+    "src_ip": "192.168.64.128",
+    "dest_ip": "192.168.64.131",
+    "src_port": 37236,
+    "dest_port": 22
+  }
+}
+{
+  "timestamp": "2026-10-23T07:18:39.421146+0000",
+  "flow_id": 2086730801224463,
+  "in_iface": "ens33",
+  "event_type": "alert",
+  "src_ip": "192.168.64.128",
+  "src_port": 37240,
+  "dest_ip": "192.168.64.131",
+  "dest_port": 22,
+  "proto": "TCP",
+  "ip_v": 4,
+  "pkt_src": "wire/pcap",
+  "metadata": {
+    "flowints": {
+      "applayer.anomaly.count": 1
+    }
+  },
+  "tx_id": 0,
+  "alert": {
+    "action": "allowed",
+    "gid": 1,
+    "signature_id": 2228000,
+    "rev": 1,
+    "signature": "SURICATA SSH invalid banner",
+    "category": "Generic Protocol Command Decode",
+    "severity": 3
+  },
+  "ts_progress": "request_banner_done",
+  "tc_progress": "response_in_progress",
+  "ssh": {
+    "client": {
+      "proto_version": "2.0",
+      "software_version": "libssh_0.12.2"
+    }
+  },
+  "app_proto": "ssh",
+  "direction": "to_server",
+  "flow": {
+    "pkts_toserver": 4,
+    "pkts_toclient": 4,
+    "bytes_toserver": 295,
+    "bytes_toclient": 298,
+    "start": "2026-10-23T07:18:39.420318+0000",
+    "src_ip": "192.168.64.128",
+    "dest_ip": "192.168.64.131",
+    "src_port": 37240,
+    "dest_port": 22
+  }
+}
+{
+  "timestamp": "2026-10-23T07:18:39.432883+0000",
+  "flow_id": 2136222978033851,
+  "in_iface": "ens33",
+  "event_type": "alert",
+  "src_ip": "192.168.64.128",
+  "src_port": 37256,
+  "dest_ip": "192.168.64.131",
+  "dest_port": 22,
+  "proto": "TCP",
+  "ip_v": 4,
+  "pkt_src": "wire/pcap",
+  "metadata": {
+    "flowints": {
+      "applayer.anomaly.count": 1
+    }
+  },
+  "tx_id": 0,
+  "alert": {
+    "action": "allowed",
+    "gid": 1,
+    "signature_id": 2228000,
+    "rev": 1,
+    "signature": "SURICATA SSH invalid banner",
+    "category": "Generic Protocol Command Decode",
+    "severity": 3
+  },
+  "ts_progress": "request_banner_done",
+  "tc_progress": "response_in_progress",
+  "ssh": {
+    "client": {
+      "proto_version": "2.0",
+      "software_version": "libssh_0.12.2"
+    }
+  },
+  "app_proto": "ssh",
+  "direction": "to_server",
+  "flow": {
+    "pkts_toserver": 4,
+    "pkts_toclient": 4,
+    "bytes_toserver": 295,
+    "bytes_toclient": 298,
+    "start": "2026-10-23T07:18:39.431842+0000",
+    "src_ip": "192.168.64.128",
+    "dest_ip": "192.168.64.131",
+    "src_port": 37256,
+    "dest_port": 22
+  }
+}
+{
+  "timestamp": "2026-10-23T07:18:39.437252+0000",
+  "flow_id": 2154893671974246,
+  "in_iface": "ens33",
+  "event_type": "alert",
+  "src_ip": "192.168.64.128",
+  "src_port": 37266,
+  "dest_ip": "192.168.64.131",
+  "dest_port": 22,
+  "proto": "TCP",
+  "ip_v": 4,
+  "pkt_src": "wire/pcap",
+  "metadata": {
+    "flowints": {
+      "applayer.anomaly.count": 1
+    }
+  },
+  "tx_id": 0,
+  "alert": {
+    "action": "allowed",
+    "gid": 1,
+    "signature_id": 2228000,
+    "rev": 1,
+    "signature": "SURICATA SSH invalid banner",
+    "category": "Generic Protocol Command Decode",
+    "severity": 3
+  },
+  "ts_progress": "request_banner_done",
+  "tc_progress": "response_in_progress",
+  "ssh": {
+    "client": {
+      "proto_version": "2.0",
+      "software_version": "libssh_0.12.2"
+    }
+  },
+  "app_proto": "ssh",
+  "direction": "to_server",
+  "flow": {
+    "pkts_toserver": 4,
+    "pkts_toclient": 4,
+    "bytes_toserver": 295,
+    "bytes_toclient": 298,
+    "start": "2026-10-23T07:18:39.436189+0000",
+    "src_ip": "192.168.64.128",
+    "dest_ip": "192.168.64.131",
+    "src_port": 37266,
+    "dest_port": 22
+  }
+}
+{
+  "timestamp": "2026-10-23T07:18:39.449565+0000",
+  "flow_id": 2206767754216784,
+  "in_iface": "ens33",
+  "event_type": "alert",
+  "src_ip": "192.168.64.128",
+  "src_port": 37282,
+  "dest_ip": "192.168.64.131",
+  "dest_port": 22,
+  "proto": "TCP",
+  "ip_v": 4,
+  "pkt_src": "wire/pcap",
+  "metadata": {
+    "flowints": {
+      "applayer.anomaly.count": 1
+    }
+  },
+  "tx_id": 0,
+  "alert": {
+    "action": "allowed",
+    "gid": 1,
+    "signature_id": 2228000,
+    "rev": 1,
+    "signature": "SURICATA SSH invalid banner",
+    "category": "Generic Protocol Command Decode",
+    "severity": 3
+  },
+  "ts_progress": "request_banner_done",
+  "tc_progress": "response_in_progress",
+  "ssh": {
+    "client": {
+      "proto_version": "2.0",
+      "software_version": "libssh_0.12.2"
+    }
+  },
+  "app_proto": "ssh",
+  "direction": "to_server",
+  "flow": {
+    "pkts_toserver": 4,
+    "pkts_toclient": 4,
+    "bytes_toserver": 295,
+    "bytes_toclient": 298,
+    "start": "2026-10-23T07:18:39.448267+0000",
+    "src_ip": "192.168.64.128",
+    "dest_ip": "192.168.64.131",
+    "src_port": 37282,
+    "dest_port": 22
+  }
+}
+{
+  "timestamp": "2026-10-23T07:18:39.455335+0000",
+  "flow_id": 2231176680249154,
+  "in_iface": "ens33",
+  "event_type": "alert",
+  "src_ip": "192.168.64.128",
+  "src_port": 37284,
+  "dest_ip": "192.168.64.131",
+  "dest_port": 22,
+  "proto": "TCP",
+  "ip_v": 4,
+  "pkt_src": "wire/pcap",
+  "metadata": {
+    "flowints": {
+      "applayer.anomaly.count": 1
+    }
+  },
+  "tx_id": 0,
+  "alert": {
+    "action": "allowed",
+    "gid": 1,
+    "signature_id": 2228000,
+    "rev": 1,
+    "signature": "SURICATA SSH invalid banner",
+    "category": "Generic Protocol Command Decode",
+    "severity": 3
+  },
+  "ts_progress": "request_banner_done",
+  "tc_progress": "response_in_progress",
+  "ssh": {
+    "client": {
+      "proto_version": "2.0",
+      "software_version": "libssh_0.12.2"
+    }
+  },
+  "app_proto": "ssh",
+  "direction": "to_server",
+  "flow": {
+    "pkts_toserver": 4,
+    "pkts_toclient": 4,
+    "bytes_toserver": 295,
+    "bytes_toclient": 298,
+    "start": "2026-10-23T07:18:39.453950+0000",
+    "src_ip": "192.168.64.128",
+    "dest_ip": "192.168.64.131",
+    "src_port": 37284,
+    "dest_port": 22
+  }
+}
+{
+  "timestamp": "2026-10-23T07:18:39.467669+0000",
+  "flow_id": 2002877379659597,
+  "in_iface": "ens33",
+  "event_type": "alert",
+  "src_ip": "192.168.64.128",
+  "src_port": 37288,
+  "dest_ip": "192.168.64.131",
+  "dest_port": 22,
+  "proto": "TCP",
+  "ip_v": 4,
+  "pkt_src": "wire/pcap",
+  "metadata": {
+    "flowints": {
+      "applayer.anomaly.count": 1
+    }
+  },
+  "tx_id": 0,
+  "alert": {
+    "action": "allowed",
+    "gid": 1,
+    "signature_id": 2228000,
+    "rev": 1,
+    "signature": "SURICATA SSH invalid banner",
+    "category": "Generic Protocol Command Decode",
+    "severity": 3
+  },
+  "ts_progress": "request_banner_done",
+  "tc_progress": "response_in_progress",
+  "ssh": {
+    "client": {
+      "proto_version": "2.0",
+      "software_version": "libssh_0.12.2"
+    }
+  },
+  "app_proto": "ssh",
+  "direction": "to_server",
+  "flow": {
+    "pkts_toserver": 4,
+    "pkts_toclient": 4,
+    "bytes_toserver": 295,
+    "bytes_toclient": 298,
+    "start": "2026-10-23T07:18:39.466331+0000",
+    "src_ip": "192.168.64.128",
+    "dest_ip": "192.168.64.131",
+    "src_port": 37288,
+    "dest_port": 22
+  }
+}
+{
+  "timestamp": "2026-10-23T07:18:41.882664+0000",
+  "flow_id": 401938692770153,
+  "in_iface": "ens33",
+  "event_type": "alert",
+  "src_ip": "192.168.64.128",
+  "src_port": 37298,
+  "dest_ip": "192.168.64.131",
+  "dest_port": 22,
+  "proto": "TCP",
+  "ip_v": 4,
+  "pkt_src": "wire/pcap",
+  "metadata": {
+    "flowints": {
+      "applayer.anomaly.count": 1
+    }
+  },
+  "tx_id": 0,
+  "alert": {
+    "action": "allowed",
+    "gid": 1,
+    "signature_id": 2228000,
+    "rev": 1,
+    "signature": "SURICATA SSH invalid banner",
+    "category": "Generic Protocol Command Decode",
+    "severity": 3
+  },
+  "ts_progress": "request_banner_done",
+  "tc_progress": "response_in_progress",
+  "ssh": {
+    "client": {
+      "proto_version": "2.0",
+      "software_version": "libssh_0.12.2"
+    }
+  },
+  "app_proto": "ssh",
+  "direction": "to_server",
+  "flow": {
+    "pkts_toserver": 4,
+    "pkts_toclient": 4,
+    "bytes_toserver": 295,
+    "bytes_toclient": 298,
+    "start": "2026-10-23T07:18:41.880015+0000",
+    "src_ip": "192.168.64.128",
+    "dest_ip": "192.168.64.131",
+    "src_port": 37298,
+    "dest_port": 22
+  }
+}
+{
+  "timestamp": "2026-10-23T07:18:42.105869+0000",
+  "flow_id": 725110463194939,
+  "in_iface": "ens33",
+  "event_type": "alert",
+  "src_ip": "192.168.64.128",
+  "src_port": 37306,
+  "dest_ip": "192.168.64.131",
+  "dest_port": 22,
+  "proto": "TCP",
+  "ip_v": 4,
+  "pkt_src": "wire/pcap",
+  "metadata": {
+    "flowints": {
+      "applayer.anomaly.count": 1
+    }
+  },
+  "tx_id": 0,
+  "alert": {
+    "action": "allowed",
+    "gid": 1,
+    "signature_id": 2228000,
+    "rev": 1,
+    "signature": "SURICATA SSH invalid banner",
+    "category": "Generic Protocol Command Decode",
+    "severity": 3
+  },
+  "ts_progress": "request_banner_done",
+  "tc_progress": "response_in_progress",
+  "ssh": {
+    "client": {
+      "proto_version": "2.0",
+      "software_version": "libssh_0.12.2"
+    }
+  },
+  "app_proto": "ssh",
+  "direction": "to_server",
+  "flow": {
+    "pkts_toserver": 4,
+    "pkts_toclient": 4,
+    "bytes_toserver": 295,
+    "bytes_toclient": 298,
+    "start": "2026-10-23T07:18:42.103291+0000",
+    "src_ip": "192.168.64.128",
+    "dest_ip": "192.168.64.131",
+    "src_port": 37306,
+    "dest_port": 22
+  }
+}
+{
+  "timestamp": "2026-10-23T07:18:43.717131+0000",
+  "flow_id": 1095357794947373,
+  "in_iface": "ens33",
+  "event_type": "alert",
+  "src_ip": "192.168.64.128",
+  "src_port": 37308,
+  "dest_ip": "192.168.64.131",
+  "dest_port": 22,
+  "proto": "TCP",
+  "ip_v": 4,
+  "pkt_src": "wire/pcap",
+  "metadata": {
+    "flowints": {
+      "applayer.anomaly.count": 1
+    }
+  },
+  "tx_id": 0,
+  "alert": {
+    "action": "allowed",
+    "gid": 1,
+    "signature_id": 2228000,
+    "rev": 1,
+    "signature": "SURICATA SSH invalid banner",
+    "category": "Generic Protocol Command Decode",
+    "severity": 3
+  },
+  "ts_progress": "request_banner_done",
+  "tc_progress": "response_in_progress",
+  "ssh": {
+    "client": {
+      "proto_version": "2.0",
+      "software_version": "libssh_0.12.2"
+    }
+  },
+  "app_proto": "ssh",
+  "direction": "to_server",
+  "flow": {
+    "pkts_toserver": 4,
+    "pkts_toclient": 4,
+    "bytes_toserver": 295,
+    "bytes_toclient": 298,
+    "start": "2026-10-23T07:18:43.713784+0000",
+    "src_ip": "192.168.64.128",
+    "dest_ip": "192.168.64.131",
+    "src_port": 37308,
+    "dest_port": 22
+  }
+}
+{
+  "timestamp": "2026-10-23T07:18:43.937033+0000",
+  "flow_id": 921153490521721,
+  "in_iface": "ens33",
+  "event_type": "alert",
+  "src_ip": "192.168.64.128",
+  "src_port": 37314,
+  "dest_ip": "192.168.64.131",
+  "dest_port": 22,
+  "proto": "TCP",
+  "ip_v": 4,
+  "pkt_src": "wire/pcap",
+  "metadata": {
+    "flowints": {
+      "applayer.anomaly.count": 1
+    }
+  },
+  "tx_id": 0,
+  "alert": {
+    "action": "allowed",
+    "gid": 1,
+    "signature_id": 2228000,
+    "rev": 1,
+    "signature": "SURICATA SSH invalid banner",
+    "category": "Generic Protocol Command Decode",
+    "severity": 3
+  },
+  "ts_progress": "request_banner_done",
+  "tc_progress": "response_in_progress",
+  "ssh": {
+    "client": {
+      "proto_version": "2.0",
+      "software_version": "libssh_0.12.2"
+    }
+  },
+  "app_proto": "ssh",
+  "direction": "to_server",
+  "flow": {
+    "pkts_toserver": 4,
+    "pkts_toclient": 4,
+    "bytes_toserver": 295,
+    "bytes_toclient": 298,
+    "start": "2026-10-23T07:18:43.935368+0000",
+    "src_ip": "192.168.64.128",
+    "dest_ip": "192.168.64.131",
+    "src_port": 37314,
+    "dest_port": 22
+  }
+}

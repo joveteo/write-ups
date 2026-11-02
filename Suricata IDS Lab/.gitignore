@@ -1,0 +1,7 @@
+# Never publish VPN configs, packet captures, or internal working notes
+*.ovpn
+*.pcap
+*.pcapng
+HANDOFF*.md
+GITHUB-NOTE.md
+*-draft.md

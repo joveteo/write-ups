@@ -1,0 +1,40 @@
+2026-10-23T06:46:00.438681+00:00 suricata-lab sshd-session[1808]: Accepted password for ubuntu from 192.168.64.128 port 50540 ssh2
+2026-10-23T06:46:23.151552+00:00 suricata-lab sshd-session[2062]: Accepted password for ubuntu from 192.168.64.128 port 53134 ssh2
+2026-10-23T06:49:49.392039+00:00 suricata-lab sshd-session[2140]: Accepted password for ubuntu from 192.168.64.128 port 39320 ssh2
+2026-10-23T06:50:21.415758+00:00 suricata-lab sshd-session[2205]: Accepted password for ubuntu from 192.168.64.128 port 33106 ssh2
+2026-10-23T07:18:32.367157+00:00 suricata-lab sshd-session[2704]: Failed password for root from 192.168.64.128 port 48468 ssh2
+2026-10-23T07:18:32.943577+00:00 suricata-lab sshd-session[2703]: Failed password for root from 192.168.64.128 port 48450 ssh2
+2026-10-23T07:18:33.360029+00:00 suricata-lab sshd-session[2700]: Failed password for root from 192.168.64.128 port 48432 ssh2
+2026-10-23T07:18:33.698272+00:00 suricata-lab sshd-session[2701]: Failed password for root from 192.168.64.128 port 48448 ssh2
+2026-10-23T07:18:35.031289+00:00 suricata-lab sshd-session[2713]: Invalid user admin from 192.168.64.128 port 48470
+2026-10-23T07:18:35.047765+00:00 suricata-lab sshd-session[2714]: Invalid user admin from 192.168.64.128 port 48486
+2026-10-23T07:18:35.050453+00:00 suricata-lab sshd-session[2716]: Invalid user admin from 192.168.64.128 port 48500
+2026-10-23T07:18:35.911982+00:00 suricata-lab sshd-session[2704]: Failed password for root from 192.168.64.128 port 48468 ssh2
+2026-10-23T07:18:36.996794+00:00 suricata-lab sshd-session[2713]: Failed password for invalid user admin from 192.168.64.128 port 48470 ssh2
+2026-10-23T07:18:37.272480+00:00 suricata-lab sshd-session[2716]: Failed password for invalid user admin from 192.168.64.128 port 48500 ssh2
+2026-10-23T07:18:37.427454+00:00 suricata-lab sshd-session[2714]: Failed password for invalid user admin from 192.168.64.128 port 48486 ssh2
+2026-10-23T07:18:37.537668+00:00 suricata-lab sshd-session[2719]: Invalid user admin from 192.168.64.128 port 37186
+2026-10-23T07:18:39.396020+00:00 suricata-lab sshd-session[2719]: Failed password for invalid user admin from 192.168.64.128 port 37186 ssh2
+2026-10-23T07:18:41.357002+00:00 suricata-lab sshd-session[2713]: Failed password for invalid user admin from 192.168.64.128 port 48470 ssh2
+2026-10-23T07:22:29.439630+00:00 suricata-lab sshd-session[2755]: Failed password for root from 192.168.64.128 port 40578 ssh2
+2026-10-23T07:22:33.761305+00:00 suricata-lab sshd-session[2755]: Failed password for root from 192.168.64.128 port 40578 ssh2
+2026-10-23T07:22:38.073989+00:00 suricata-lab sshd-session[2755]: Failed password for root from 192.168.64.128 port 40578 ssh2
+2026-10-23T07:22:42.619800+00:00 suricata-lab sshd-session[2755]: Failed password for root from 192.168.64.128 port 40578 ssh2
+2026-10-23T07:22:47.735345+00:00 suricata-lab sshd-session[2755]: Failed password for root from 192.168.64.128 port 40578 ssh2
+2026-10-23T07:22:50.947770+00:00 suricata-lab sshd-session[2762]: Invalid user admin from 192.168.64.128 port 37098
+2026-10-23T07:22:52.504497+00:00 suricata-lab sshd-session[2762]: Failed password for invalid user admin from 192.168.64.128 port 37098 ssh2
+2026-10-23T07:22:57.230527+00:00 suricata-lab sshd-session[2762]: Failed password for invalid user admin from 192.168.64.128 port 37098 ssh2
+2026-10-23T07:23:01.939798+00:00 suricata-lab sshd-session[2762]: Failed password for invalid user admin from 192.168.64.128 port 37098 ssh2
+2026-10-23T07:23:07.529005+00:00 suricata-lab sshd-session[2762]: Failed password for invalid user admin from 192.168.64.128 port 37098 ssh2
+2026-10-23T07:23:12.174651+00:00 suricata-lab sshd-session[2762]: Failed password for invalid user admin from 192.168.64.128 port 37098 ssh2
+2026-10-23T07:23:16.427141+00:00 suricata-lab sshd-session[2764]: Failed password for ubuntu from 192.168.64.128 port 33776 ssh2
+2026-10-23T07:23:20.674768+00:00 suricata-lab sshd-session[2764]: Failed password for ubuntu from 192.168.64.128 port 33776 ssh2
+2026-10-23T07:23:26.481185+00:00 suricata-lab sshd-session[2764]: Failed password for ubuntu from 192.168.64.128 port 33776 ssh2
+2026-10-23T07:23:30.469590+00:00 suricata-lab sshd-session[2764]: Failed password for ubuntu from 192.168.64.128 port 33776 ssh2
+2026-10-23T07:23:32.939040+00:00 suricata-lab sshd-session[2764]: Accepted password for ubuntu from 192.168.64.128 port 33776 ssh2
+2026-10-23T07:27:22.771501+00:00 suricata-lab sudo: ubuntu : TTY=/dev/tty1 ; PWD=/ ; USER=root ; COMMAND=/usr/bin/grep -E Failed password|Invalid user|Accepted /var/log/auth.log
+2026-10-23T07:29:33.935073+00:00 suricata-lab sudo: ubuntu : TTY=/dev/tty1 ; PWD=/home/ubuntu ; USER=root ; COMMAND=/usr/bin/grep -E Failed password|Invalid user|Accepted /var/log/auth.log
+2026-10-23T07:30:12.597490+00:00 suricata-lab sudo: ubuntu : TTY=/dev/tty1 ; PWD=/home/ubuntu ; USER=root ; COMMAND=/usr/bin/grep -E Failed password|Invalid user|Accepted /var/log/auth.log
+2026-10-23T07:52:26.371416+00:00 suricata-lab sshd-session[3098]: Accepted password for ubuntu from 192.168.64.128 port 54082 ssh2
+2026-10-23T07:52:57.007382+00:00 suricata-lab sshd-session[3241]: Accepted password for ubuntu from 192.168.64.128 port 43792 ssh2
+2026-10-23T08:03:07.064675+00:00 suricata-lab sudo: ubuntu : TTY=/dev/tty1 ; PWD=/home/ubuntu ; USER=root ; COMMAND=/usr/bin/grep -E Failed password|Invalid user|Accepted password /var/log/auth.log

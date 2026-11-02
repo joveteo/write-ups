@@ -1,0 +1,328 @@
+{
+  "timestamp": "2026-10-23T07:32:00.631688+0000",
+  "flow_id": 179805957508516,
+  "in_iface": "ens33",
+  "event_type": "alert",
+  "src_ip": "192.168.64.128",
+  "src_port": 40515,
+  "dest_ip": "192.168.64.131",
+  "dest_port": 56,
+  "proto": "TCP",
+  "ip_v": 4,
+  "pkt_src": "wire/pcap",
+  "alert": {
+    "action": "allowed",
+    "gid": 1,
+    "signature_id": 1000001,
+    "rev": 1,
+    "signature": "LOCAL LAB TCP SYN rate threshold - possible port scan",
+    "category": "Attempted Information Leak",
+    "severity": 2,
+    "metadata": {
+      "created_at": [
+        "2026_10_22"
+      ],
+      "lab": [
+        "local"
+      ]
+    }
+  },
+  "direction": "to_server",
+  "flow": {
+    "pkts_toserver": 1,
+    "pkts_toclient": 0,
+    "bytes_toserver": 60,
+    "bytes_toclient": 0,
+    "start": "2026-10-23T07:32:00.631688+0000",
+    "src_ip": "192.168.64.128",
+    "dest_ip": "192.168.64.131",
+    "src_port": 40515,
+    "dest_port": 56
+  }
+}
+{
+  "timestamp": "2026-10-23T07:37:58.013630+0000",
+  "flow_id": 1727385915411689,
+  "in_iface": "ens33",
+  "event_type": "alert",
+  "src_ip": "192.168.64.128",
+  "src_port": 55226,
+  "dest_ip": "192.168.64.131",
+  "dest_port": 80,
+  "proto": "TCP",
+  "ip_v": 4,
+  "pkt_src": "wire/pcap",
+  "tx_id": 0,
+  "alert": {
+    "action": "allowed",
+    "gid": 1,
+    "signature_id": 2009358,
+    "rev": 8,
+    "signature": "ET SCAN Nmap Scripting Engine User-Agent Detected (Nmap Scripting Engine)",
+    "category": "Web Application Attack",
+    "severity": 1,
+    "metadata": {
+      "confidence": [
+        "High"
+      ],
+      "created_at": [
+        "2010_07_30"
+      ],
+      "signature_severity": [
+        "Informational"
+      ],
+      "updated_at": [
+        "2024_04_13"
+      ]
+    }
+  },
+  "ts_progress": "request_complete",
+  "tc_progress": "response_complete",
+  "http": {
+    "hostname": "192.168.64.131",
+    "url": "/",
+    "http_user_agent": "Mozilla/5.0 (compatible; Nmap Scripting Engine; https://nmap.org/book/nse.html)",
+    "http_content_type": "text/html",
+    "http_method": "HEAD",
+    "protocol": "HTTP/1.1",
+    "status": 200,
+    "length": 0
+  },
+  "app_proto": "http",
+  "direction": "to_server",
+  "flow": {
+    "pkts_toserver": 4,
+    "pkts_toclient": 4,
+    "bytes_toserver": 425,
+    "bytes_toclient": 546,
+    "start": "2026-10-23T07:37:58.008972+0000",
+    "src_ip": "192.168.64.128",
+    "dest_ip": "192.168.64.131",
+    "src_port": 55226,
+    "dest_port": 80
+  }
+}
+{
+  "timestamp": "2026-10-23T07:37:58.013630+0000",
+  "flow_id": 1727385915411689,
+  "in_iface": "ens33",
+  "event_type": "alert",
+  "src_ip": "192.168.64.128",
+  "src_port": 55226,
+  "dest_ip": "192.168.64.131",
+  "dest_port": 80,
+  "proto": "TCP",
+  "ip_v": 4,
+  "pkt_src": "wire/pcap",
+  "tx_id": 0,
+  "alert": {
+    "action": "allowed",
+    "gid": 1,
+    "signature_id": 1000003,
+    "rev": 1,
+    "signature": "LOCAL LAB HTTP User-Agent contains Nmap",
+    "category": "Attempted Information Leak",
+    "severity": 2,
+    "metadata": {
+      "created_at": [
+        "2026_10_22"
+      ],
+      "lab": [
+        "local"
+      ]
+    }
+  },
+  "ts_progress": "request_complete",
+  "tc_progress": "response_complete",
+  "http": {
+    "hostname": "192.168.64.131",
+    "url": "/",
+    "http_user_agent": "Mozilla/5.0 (compatible; Nmap Scripting Engine; https://nmap.org/book/nse.html)",
+    "http_content_type": "text/html",
+    "http_method": "HEAD",
+    "protocol": "HTTP/1.1",
+    "status": 200,
+    "length": 0
+  },
+  "app_proto": "http",
+  "direction": "to_server",
+  "flow": {
+    "pkts_toserver": 4,
+    "pkts_toclient": 4,
+    "bytes_toserver": 425,
+    "bytes_toclient": 546,
+    "start": "2026-10-23T07:37:58.008972+0000",
+    "src_ip": "192.168.64.128",
+    "dest_ip": "192.168.64.131",
+    "src_port": 55226,
+    "dest_port": 80
+  }
+}
+{
+  "timestamp": "2026-10-23T07:40:23.018661+0000",
+  "flow_id": 2050475044820171,
+  "in_iface": "ens33",
+  "event_type": "alert",
+  "src_ip": "192.168.64.128",
+  "src_port": 44350,
+  "dest_ip": "192.168.64.131",
+  "dest_port": 80,
+  "proto": "TCP",
+  "ip_v": 4,
+  "pkt_src": "wire/pcap",
+  "alert": {
+    "action": "allowed",
+    "gid": 1,
+    "signature_id": 1000001,
+    "rev": 1,
+    "signature": "LOCAL LAB TCP SYN rate threshold - possible port scan",
+    "category": "Attempted Information Leak",
+    "severity": 2,
+    "metadata": {
+      "created_at": [
+        "2026_10_22"
+      ],
+      "lab": [
+        "local"
+      ]
+    }
+  },
+  "direction": "to_server",
+  "flow": {
+    "pkts_toserver": 1,
+    "pkts_toclient": 0,
+    "bytes_toserver": 74,
+    "bytes_toclient": 0,
+    "start": "2026-10-23T07:40:23.018661+0000",
+    "src_ip": "192.168.64.128",
+    "dest_ip": "192.168.64.131",
+    "src_port": 44350,
+    "dest_port": 80
+  }
+}
+{
+  "timestamp": "2026-10-23T07:40:48.407767+0000",
+  "flow_id": 62497518463554,
+  "in_iface": "ens33",
+  "event_type": "alert",
+  "src_ip": "192.168.64.128",
+  "src_port": 49690,
+  "dest_ip": "192.168.64.131",
+  "dest_port": 80,
+  "proto": "TCP",
+  "ip_v": 4,
+  "pkt_src": "wire/pcap",
+  "alert": {
+    "action": "allowed",
+    "gid": 1,
+    "signature_id": 1000001,
+    "rev": 1,
+    "signature": "LOCAL LAB TCP SYN rate threshold - possible port scan",
+    "category": "Attempted Information Leak",
+    "severity": 2,
+    "metadata": {
+      "created_at": [
+        "2026_10_22"
+      ],
+      "lab": [
+        "local"
+      ]
+    }
+  },
+  "direction": "to_server",
+  "flow": {
+    "pkts_toserver": 1,
+    "pkts_toclient": 0,
+    "bytes_toserver": 74,
+    "bytes_toclient": 0,
+    "start": "2026-10-23T07:40:48.407767+0000",
+    "src_ip": "192.168.64.128",
+    "dest_ip": "192.168.64.131",
+    "src_port": 49690,
+    "dest_port": 80
+  }
+}
+{
+  "timestamp": "2026-10-23T07:40:50.155559+0000",
+  "flow_id": 668124323802386,
+  "in_iface": "ens33",
+  "event_type": "alert",
+  "src_ip": "192.168.64.128",
+  "src_port": 49910,
+  "dest_ip": "192.168.64.131",
+  "dest_port": 80,
+  "proto": "TCP",
+  "ip_v": 4,
+  "pkt_src": "wire/pcap",
+  "alert": {
+    "action": "allowed",
+    "gid": 1,
+    "signature_id": 1000001,
+    "rev": 1,
+    "signature": "LOCAL LAB TCP SYN rate threshold - possible port scan",
+    "category": "Attempted Information Leak",
+    "severity": 2,
+    "metadata": {
+      "created_at": [
+        "2026_10_22"
+      ],
+      "lab": [
+        "local"
+      ]
+    }
+  },
+  "direction": "to_server",
+  "flow": {
+    "pkts_toserver": 1,
+    "pkts_toclient": 0,
+    "bytes_toserver": 74,
+    "bytes_toclient": 0,
+    "start": "2026-10-23T07:40:50.155559+0000",
+    "src_ip": "192.168.64.128",
+    "dest_ip": "192.168.64.131",
+    "src_port": 49910,
+    "dest_port": 80
+  }
+}
+{
+  "timestamp": "2026-10-23T07:41:01.348223+0000",
+  "flow_id": 1495607437924092,
+  "in_iface": "ens33",
+  "event_type": "alert",
+  "src_ip": "192.168.64.128",
+  "src_port": 50220,
+  "dest_ip": "192.168.64.131",
+  "dest_port": 80,
+  "proto": "TCP",
+  "ip_v": 4,
+  "pkt_src": "wire/pcap",
+  "alert": {
+    "action": "allowed",
+    "gid": 1,
+    "signature_id": 1000001,
+    "rev": 1,
+    "signature": "LOCAL LAB TCP SYN rate threshold - possible port scan",
+    "category": "Attempted Information Leak",
+    "severity": 2,
+    "metadata": {
+      "created_at": [
+        "2026_10_22"
+      ],
+      "lab": [
+        "local"
+      ]
+    }
+  },
+  "direction": "to_server",
+  "flow": {
+    "pkts_toserver": 1,
+    "pkts_toclient": 0,
+    "bytes_toserver": 74,
+    "bytes_toclient": 0,
+    "start": "2026-10-23T07:41:01.348223+0000",
+    "src_ip": "192.168.64.128",
+    "dest_ip": "192.168.64.131",
+    "src_port": 50220,
+    "dest_port": 80
+  }
+}
